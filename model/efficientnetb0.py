@@ -15,7 +15,7 @@ def build_model(num_classes=NUM_CLASSES):
         input_shape=(IMG_SIZE, IMG_SIZE, 3)
     )
 
-    base_model.trainable = False
+    base_model.trainable = False  # Freeze pretrained layers
 
     x = base_model(inputs, training=False)
     x = layers.GlobalAveragePooling2D()(x)
