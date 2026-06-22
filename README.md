@@ -2,109 +2,124 @@
 
 ## Overview
 
-Early detection of brain tumors is essential for timely diagnosis and treatment. Manual interpretation of MRI scans can be time-consuming and relies on expert radiologists. This project presents an AI-powered solution that classifies brain MRI images as **Tumor** or **No Tumor** using **EfficientNetB0** with **Transfer Learning**.
+Early detection of brain tumors plays a crucial role in timely diagnosis and treatment. This project presents an AI-powered brain MRI classification system that identifies whether an MRI scan contains a **Tumor** or **No Tumor** using **EfficientNetB0** with **Transfer Learning**.
 
-To improve transparency, the project also integrates **Grad-CAM**, allowing users to visualize the regions of the MRI that influenced the model's prediction. The application is deployed through a user-friendly **Streamlit** interface and generates downloadable PDF reports containing prediction results.
+To improve model transparency, **Grad-CAM (Gradient-weighted Class Activation Mapping)** is integrated to visualize the regions that influenced the model's prediction. The complete application was developed with a Streamlit interface and PDF report generation, while this repository focuses on the core deep learning architecture and explainability implementation.
 
 ---
 
 ## Features
 
-* Brain MRI classification (Tumor / No Tumor)
-* EfficientNetB0 with Transfer Learning
-* Explainable AI using Grad-CAM
-* Interactive Streamlit web application
-* Automatic PDF report generation
-* Clean and modular project structure
+- Brain MRI classification (Tumor / No Tumor)
+- EfficientNetB0 with Transfer Learning
+- Explainable AI using Grad-CAM
+- Lightweight and modular implementation
+- Visualization of model attention using heatmaps
 
 ---
 
 ## Problem Statement
 
-Brain tumors can pose serious health risks if not detected early. Deep learning has shown great potential in assisting medical image analysis, but training accurate models often requires large datasets, which are difficult to obtain in healthcare due to privacy and ethical constraints.
+Brain tumors can pose serious health risks if not detected at an early stage. Although deep learning has demonstrated excellent performance in medical image analysis, healthcare datasets are often limited due to privacy and ethical constraints.
 
-This project leverages **transfer learning** to build an accurate classification model using a limited MRI dataset while incorporating **Grad-CAM** to improve the interpretability of predictions.
+This project leverages **Transfer Learning** to improve classification performance on a limited MRI dataset while integrating **Grad-CAM** to make model predictions more interpretable.
 
 ---
 
 ## Why EfficientNetB0?
 
-EfficientNetB0 was chosen because it provides an excellent balance between performance and computational efficiency.
+EfficientNetB0 was selected because it offers an excellent balance between accuracy and computational efficiency.
 
-Key advantages include:
+### Advantages
 
-* Lightweight architecture with fewer parameters
-* Faster training and inference
-* Strong feature extraction through pretrained ImageNet weights
-* Well-suited for small medical imaging datasets
-* Easy deployment in real-world applications
+- Lightweight architecture
+- Faster training and inference
+- Powerful pretrained ImageNet feature extractor
+- Performs well on limited medical datasets
+- Suitable for real-world deployment
 
 ---
 
 ## Explainable AI with Grad-CAM
 
-One of the biggest challenges in medical AI is the lack of interpretability.
+Deep learning models are often criticized for being "black boxes."
 
-To address this, the project integrates **Grad-CAM (Gradient-weighted Class Activation Mapping)**, which generates heatmaps highlighting the regions of the MRI scan that contributed most to the model's prediction. This helps users better understand how the model arrives at its decisions and promotes greater transparency.
-
----
-
-## Tech Stack
-
-* Python
-* TensorFlow / Keras
-* EfficientNetB0
-* OpenCV
-* NumPy
-* Matplotlib
-* Streamlit
-* ReportLab
+This project incorporates **Grad-CAM**, which highlights the regions of an MRI scan that contributed most to the model's prediction. These visual explanations help improve transparency and increase confidence in AI-assisted medical image analysis.
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
-Brain-Tumor-Detection/
-│
-├── models/
-├── explainability/
-├── app/
+brain-tumor-detection-ai/
+
 ├── assets/
-├── notebooks/
-├── requirements.txt
-└── README.md
+│   ├── streamlit_home.png
+│   ├── prediction.png
+│   ├── gradcam.png
+│   └── report.png
+│
+├── explainability/
+│   └── gradcam.py
+│
+├── model/
+│   ├── efficientnetb0.py
+│   └── training.py
+│
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## Results
+# Tech Stack
 
-The developed model achieved strong classification performance on the test dataset while maintaining efficient inference time. Grad-CAM visualizations further enhanced the model's interpretability by highlighting the regions influencing each prediction.
-
----
-
-## Future Improvements
-
-* Multi-class brain tumor classification
-* Evaluation on larger and more diverse datasets
-* Cloud deployment for remote accessibility
-* Integration with clinical decision support systems
+- Python
+- TensorFlow / Keras
+- EfficientNetB0
+- NumPy
+- OpenCV
+- Matplotlib
+- Streamlit
+- ReportLab
 
 ---
 
-## Disclaimer
+# Repository Contents
+
+This repository contains the core implementation of the project, including:
+
+- EfficientNetB0 model architecture
+- Transfer Learning implementation
+- Grad-CAM implementation
+- Project documentation
+- Sample application screenshots
+
+The complete deployment application, trained model weights, and supporting utilities are intentionally excluded from this repository.
+
+---
+
+# Future Improvements
+
+- Multi-class brain tumor classification
+- Evaluation on larger multi-center datasets
+- Cloud deployment
+- Integration with clinical decision support systems
+
+---
+
+# Disclaimer
 
 This project is developed for educational and research purposes only.
 
-It is **not intended for clinical diagnosis or medical decision-making**. Predictions generated by this model should always be verified by qualified healthcare professionals.
+It is **not intended for clinical diagnosis or medical decision-making.** Any predictions generated by the model should always be verified by qualified healthcare professionals.
 
 ---
 
-## Author
+# Author
 
 **Aditi Goyal**
 
 Final Year B.Tech in Computer Science & Engineering (AI & ML)
 
-Passionate about Artificial Intelligence, Medical Imaging, Explainable AI, and Generative AI.
+Interested in Artificial Intelligence, Medical Imaging, Explainable AI, Computer Vision, and Generative AI.
